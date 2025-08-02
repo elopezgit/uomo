@@ -1,0 +1,302 @@
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  background: #000;
+  color: #fff;
+  line-height: 1.6;
+  scroll-behavior: smooth;
+}
+
+/* Navbar */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #111;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  z-index: 10;
+}
+
+.navbar .logo {
+  font-size: 1.8rem;
+  font-weight: 800;
+}
+
+/* Hamburguesa */
+.navbar .hamburger {
+  cursor: pointer;
+  display: none;
+  font-size: 1.8rem;
+  z-index: 20;
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.navbar .hamburger i {
+  color: #fff;
+  font-size: 1.8rem;
+}
+
+.hamburger.open i::before {
+  content: "\f00d"; /* Ícono de "X" en Font Awesome */
+}
+
+/* LINKS EN ESCRITORIO */
+.navbar .nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2.5rem;
+  padding-right: 2rem;
+}
+
+.navbar .nav-links li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  white-space: nowrap;
+}
+
+.navbar .nav-links li a:hover {
+  color: #1e3a8a;
+}
+
+/* Ajuste para tablets */
+@media (max-width: 1024px) {
+  .navbar .nav-links {
+    gap: 1.2rem;
+  }
+  .navbar .nav-links li a {
+    font-size: 0.95rem;
+  }
+}
+
+/* Responsive para móviles */
+@media (max-width: 768px) {
+  .navbar .hamburger {
+    display: block;
+  }
+  .navbar .nav-links {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background: #111;
+    flex-direction: column;
+    width: 220px;
+    display: none;
+    padding: 1rem;
+  }
+  .navbar .nav-links.active {
+    display: flex;
+    animation: slideIn .3s ease forwards;
+  }
+  .navbar .nav-links li a {
+    font-size: 1rem;
+    padding: 0.5rem 0;
+  }
+}
+
+@keyframes slideIn {
+  from {opacity: 0; transform: translateX(100%);}
+  to {opacity: 1; transform: translateX(0);}
+}
+
+/* Banner */
+.banner {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.banner-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: .4;
+  filter: grayscale(100%);
+}
+.banner-content {
+  position: relative;
+  z-index: 1;
+  padding: 0 1rem;
+}
+.banner-content h1 {
+  font-size: 4rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+.banner-content p {
+  font-size: 1.3rem;
+  margin: 1rem 0;
+  font-weight: 400;
+}
+.cta-button {
+  background: #1e3a8a;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.2rem;
+  transition: background .3s ease;
+}
+.cta-button:hover {
+  background: #10225b;
+}
+
+/* Banner en móviles */
+@media (max-width: 768px) {
+  .banner-content h1 {
+    font-size: 2.2rem;
+    line-height: 1.2;
+  }
+  .banner-content p {
+    font-size: 1rem;
+  }
+  .cta-button {
+    font-size: 1rem;
+    padding: 0.8rem 1.5rem;
+  }
+}
+
+/* Servicios */
+.services {
+  padding: 4rem 2rem;
+  background: #111;
+}
+.services h2 {
+  text-align: center;
+  font-size: 2.8rem;
+  margin-bottom: 2rem;
+  font-weight: 600;
+}
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+.card {
+  background: #222;
+  padding: 2rem;
+  border-radius: 20px;
+  transition: transform .3s ease;
+}
+.card:hover {
+  transform: scale(1.05);
+}
+.card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+/* Redes */
+.socials {
+  text-align: center;
+  padding: 2rem;
+  background: #111;
+}
+.socials a i {
+  transition: transform .3s, color .3s;
+  color: #fff;
+}
+.socials a:hover i {
+  transform: scale(1.2);
+}
+.socials a[aria-label="Instagram"] i:hover {color: #E1306C;}
+.socials a[aria-label="Facebook"] i:hover {color: #1877F2;}
+.socials a[aria-label="WhatsApp"] i:hover {color: #25D366;}
+
+/* Ubicación */
+.location {
+  padding: 4rem 2rem;
+  background: #111;
+  text-align: center;
+}
+.location iframe {
+  width: 100%;
+  height: 400px;
+  border: none;
+  border-radius: 10px;
+}
+
+/* Datos de Pago */
+.payment {
+  padding: 4rem 2rem;
+  background: #111;
+  text-align: center;
+}
+.payment h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  font-weight: 600;
+}
+.payment-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: center;
+}
+.payment-info div {
+  background: #222;
+  padding: 1.5rem;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 500px;
+  text-align: center;
+}
+.payment-info p {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+.payment-info button {
+  background: #1e3a8a;
+  color: #fff;
+  border: none;
+  padding: 0.7rem 1.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.3s ease;
+}
+.payment-info button:hover {
+  background: #10225b;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 1rem;
+  background: #111;
+  color: #777;
+}
+
+
+.navbar .hamburger {
+  cursor: pointer;
+  display: none;
+  font-size: 2rem;
+  z-index: 20;
+  position: relative;
+}
+
+.navbar .hamburger i {
+  color: #fff;
+  font-size: 2rem;
+}
+@media (max-width: 768px) {
+  .navbar .hamburger {
+    display: block;
+  }
+}
+

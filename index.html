@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spa Exclusivo Uomo</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <!-- Font Awesome última versión -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+  <div class="logo">UOMO</div>
+  <div class="hamburger" id="hamburger">
+    <i class="fa-solid fa-bars"></i> <!-- Ícono correcto para FA6 -->
+  </div>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#banner">Inicio</a></li>
+    <li><a href="#services">Servicios</a></li>
+    <li><a href="#socials">Redes</a></li>
+    <li><a href="#location">Ubicación</a></li>
+  </ul>
+</nav>
+
+  <!-- Banner -->
+  <header class="banner" id="banner">
+    <video autoplay loop muted class="banner-video">
+      <source src="assets/video/banner.mp4" type="video/mp4">
+    </video>
+    <div class="banner-content">
+      <h1>EXPERIENCIA UOMO EXCLUSIVA</h1>
+      <p>Estética y bienestar diseñados para vos.</p>
+      <a href="#services" class="cta-button">RESERVAR AHORA</a>
+    </div>
+  </header>
+
+  <!-- Servicios -->
+  <section class="services" id="services">
+    <h2>Nuestros Servicios</h2>
+    <div class="cards">
+      <div class="card"><h3>Depilación Masculina</h3><p>Tratamientos diseñados exclusivamente para hombres.</p></div>
+      <div class="card"><h3>Peeling Facial</h3><p>Renueva tu piel con técnicas avanzadas y seguras.</p></div>
+      <div class="card"><h3>Masajes Descontracturantes</h3><p>Libera el estrés y mejora tu rendimiento físico.</p></div>
+      <div class="card"><h3>Barbería Premium</h3><p>Corte, perfilado y cuidado de barba con estilo.</p></div>
+      <div class="card"><h3>Tratamientos Anti-Edad</h3><p>Protocolos exclusivos para mantener tu piel joven.</p></div>
+      <div class="card"><h3>Entrenamiento Personalizado</h3><p>Combina estética y bienestar físico con profesionales.</p></div>
+    </div>
+  </section>
+
+  <!-- Socials -->
+  <section class="socials" id="socials">
+    <h2>Seguinos en nuestras redes</h2>
+    <a href="https://instagram.com/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram fa-2x"></i></a>
+    <a href="https://facebook.com/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook fa-2x"></i></a>
+    <a href="https://wa.me/XXXXXXXXXX" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp fa-2x"></i></a>
+  </section>
+
+  <!-- Ubicación -->
+  <section class="location" id="location">
+    <h2>Ubicación</h2>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3563.204883397916!2d-65.26773621329971!3d-26.737837225962164!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x942267c757358edb%3A0x89e6083a2d4a1d1c!2sCorrientes%20655%2C%20T4103CYI%20Taf%C3%AD%20Viejo%2C%20Tucum%C3%A1n!5e0!3m2!1ses-419!2sar!4v1754078992949!5m2!1ses-419!2sar" allowfullscreen loading="lazy"></iframe>
+  </section>
+
+  <!-- Datos de Pago -->
+  <section class="payment" id="payment">
+    <h2>Datos de Pago</h2>
+    <div class="payment-info">
+      <div>
+        <p><strong>Alias:</strong> uomo.spa.tucuman</p>
+        <button onclick="copyToClipboard('uomo.spa.tucuman', this)">Copiar Alias</button>
+      </div>
+      <div>
+        <p><strong>CBU:</strong> 0000003100012345678901</p>
+        <button onclick="copyToClipboard('0000003100012345678901', this)">Copiar CBU</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Spa Exclusivo Uomo. Todos los derechos reservados.</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    // Toggle menú y animación hamburguesa
+    document.getElementById('hamburger').addEventListener('click', () => {
+      document.getElementById('navLinks').classList.toggle('active');
+      document.getElementById('hamburger').classList.toggle('open');
+    });
+
+    // Cerrar menú al hacer clic en un enlace
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        document.getElementById('navLinks').classList.remove('active');
+        document.getElementById('hamburger').classList.remove('open');
+      });
+    });
+
+    // Copiar datos al portapapeles
+    function copyToClipboard(text, btn) {
+      navigator.clipboard.writeText(text).then(() => {
+        btn.textContent = '¡Copiado!';
+        setTimeout(() => btn.textContent = 'Copiar', 2000);
+      }).catch(err => console.error('Error al copiar:', err));
+    }
+  </script>
+</body>
+</html>
