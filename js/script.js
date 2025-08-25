@@ -1,12 +1,46 @@
+<script>
 // --- Menú hamburguesa ---
-function toggleMenu() {
-  document.getElementById('navLinks').classList.toggle('active');
-}
+document.addEventListener('DOMContentLoaded', () => {
+  const burger = document.getElementById('hamburger');
+  const nav    = document.getElementById('navLinks');
 
-// Cerrar menú automáticamente al hacer clic en un enlace
-document.querySelectorAll('.nav-links a').forEach(link => {
-  link.addEventListener('click', () => {
-    document.getElementById('navLinks').classList.remove('active');
+  function openMenu() {
+    nav.classList.add('active');
+    burger.classList.add('open');
+    burger.setAttribute('aria-expanded', 'true');
+  }
+  function closeMenu() {
+    nav.classList.remove('active');
+    burger.classList.remove('open');
+    burger.setAttribute('aria-expanded', 'false');
+  }
+  function toggleMenu() {
+    nav.classList.contains('active') ? closeMenu() : openMenu();
+  }
+
+  // Click en hamburguesa
+  if (burger) {
+    burger.addEventListener('click', toggleMenu);
+    // Atributos de accesibilidad
+    burger.setAttribute('aria-controls', 'navLinks');
+    burger.setAttribute('aria-expanded', 'false');
+  }
+
+  // Cerrar al hacer clic en un enlace del menú
+  document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', closeMenu);
+  });
+
+  // Cerrar si se hace clic fuera del menú
+  document.addEventListener('click', (e) => {
+    if (nav.classList.contains('active') && !nav.contains(e.target) && !burger.contains(e.target)) {
+      closeMenu();
+    }
+  });
+
+  // Cerrar si cambia a vista de escritorio
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 768) closeMenu();
   });
 });
 
@@ -32,6 +66,6 @@ function showCopyMessage() {
   msg.style.boxShadow = '0 4px 10px rgba(0,0,0,0.3)';
   msg.style.zIndex = '1000';
   document.body.appendChild(msg);
-
   setTimeout(() => msg.remove(), 2000);
 }
+</script>

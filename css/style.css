@@ -185,11 +185,16 @@ body {
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 1.5rem;
 }
+
+/* Card con flex para empujar el botón abajo */
 .card {
   background: #222;
   padding: 2rem;
   border-radius: 20px;
   transition: transform .3s ease;
+  display: flex;               /* << clave */
+  flex-direction: column;      /* << clave */
+  min-height: 100%;            /* ayuda en alturas variables */
 }
 .card:hover {
   transform: scale(1.05);
@@ -198,6 +203,28 @@ body {
   font-size: 1.5rem;
   margin-bottom: 1rem;
   font-weight: 600;
+}
+
+/* Botón WhatsApp alineado al pie de cada card */
+.whatsapp-btn {
+  margin-top: auto;            /* << empuja al fondo */
+  align-self: center;          /* centrado horizontal */
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 15px;
+  background-color: #25d366;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background 0.3s;
+  text-align: center;
+  width: 100%; 
+
+}
+.whatsapp-btn:hover {
+  background-color: #1ebd5a;
 }
 
 /* Redes */
@@ -273,6 +300,24 @@ body {
   background: #10225b;
 }
 
+/* Sección Solo Logo */
+.logo-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;   /* ocupa toda la pantalla */
+  background: #000; /* fondo elegante */
+}
+.logo-local {
+  max-width: 600px;
+  width: 80%;
+  height: auto;
+}
+.logo-img {
+  height: 50px;
+  width: auto;
+}
+
 /* Footer */
 footer {
   text-align: center;
@@ -281,7 +326,7 @@ footer {
   color: #777;
 }
 
-
+/* (duplicado de hamburguesa incluido arriba; conservamos esta versión compacta para móviles) */
 .navbar .hamburger {
   cursor: pointer;
   display: none;
@@ -289,7 +334,6 @@ footer {
   z-index: 20;
   position: relative;
 }
-
 .navbar .hamburger i {
   color: #fff;
   font-size: 2rem;
@@ -300,3 +344,102 @@ footer {
   }
 }
 
+
+/* Logo */
+.logo-img { height: 42px; width: auto; display:block; }
+
+/* Botón hamburguesa */
+.navbar .hamburger{
+  background: transparent;
+  border: 0;
+  color:#fff;
+  cursor:pointer;
+  display:none;          /* se muestra en mobile */
+  font-size: 1.9rem;
+  z-index: 100;          /* por encima del menú */
+  line-height: 1;
+}
+
+/* Menú mobile en overlay */
+@media (max-width: 768px){
+  .navbar .hamburger{ display:block; }
+
+  .navbar .nav-links{
+    position: fixed;     /* overlay */
+    top: 64px;           /* altura aprox. de la navbar */
+    right: 0;
+    background:#111;
+    flex-direction: column;
+    width: 80vw;
+    max-width: 320px;
+    height: calc(100vh - 64px);
+    display:none;
+    padding: 1rem;
+    gap: 1rem;
+    z-index: 90;         /* por debajo del botón */
+    box-shadow: -8px 0 24px rgba(0,0,0,.4);
+  }
+  .navbar .nav-links.active{ display:flex; animation: slideIn .3s ease forwards; }
+}
+
+/* (opcional) cambiar ícono a “X” al abrir */
+.hamburger.open i::before{ content:"\f00d"; }
+
+
+/* Aumentar altura de la navbar y asegurar que quede por encima */
+.navbar{
+  min-height: 64px;
+  z-index: 1000; /* más alto que el menú y el video */
+}
+
+/* Botón hamburguesa: área tocable grande (48–56px) */
+.navbar .hamburger{
+  background: transparent;
+  border: 0;
+  color: #fff;
+  cursor: pointer;
+  display: none;          /* se muestra en mobile más abajo */
+  width: 56px;            /* área de toque */
+  height: 56px;           /* área de toque */
+  border-radius: 10px;
+  align-items: center;
+  justify-content: center;
+  display: none;
+  z-index: 1100;          /* por encima del panel */
+  padding: 0;             /* el ancho/alto ya definen el área */
+}
+
+.navbar .hamburger i{
+  font-size: 28px;        /* icono más grande */
+  line-height: 1;
+  pointer-events: none;   /* asegura que el click llegue al botón */
+}
+
+/* Mostrar en móvil y colocarlo bien a la derecha */
+@media (max-width: 768px){
+  .navbar .hamburger{
+    display: inline-flex;
+    margin-left: auto;
+  }
+
+  /* Panel lateral */
+  .navbar .nav-links{
+    position: fixed;
+    top: 64px;
+    right: 0;
+    background:#111;
+    flex-direction: column;
+    width: 80vw;
+    max-width: 320px;
+    height: calc(100vh - 64px);
+    display:none;
+    padding: 1rem;
+    gap: 1rem;
+    z-index: 1005;
+    box-shadow: -8px 0 24px rgba(0,0,0,.4);
+  }
+  .navbar .nav-links.active{ display:flex; }
+}
+
+/* Cambiar a X cuando está abierto (Font Awesome) */
+.hamburger.open i::before{ content:"\f00d"; }

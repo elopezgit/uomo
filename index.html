@@ -7,22 +7,32 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <!-- Font Awesome última versión -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
-  <!-- Navbar -->
+  
   <nav class="navbar">
-  <div class="logo">UOMO</div>
-  <div class="hamburger" id="hamburger">
-    <i class="fa-solid fa-bars"></i> <!-- Ícono correcto para FA6 -->
+  <div class="logo">
+    <a href="#banner" class="logo-link" aria-label="Ir al inicio">
+      <img src="assets/img/logouomo1.jpeg" alt="Uomo Estética para Hombres" class="logo-img">
+    </a>
   </div>
+
+  <button class="hamburger" id="hamburger"
+          aria-label="Abrir menú" aria-expanded="false" aria-controls="navLinks">
+    <i class="fa-solid fa-bars"></i>
+  </button>
+
   <ul class="nav-links" id="navLinks">
     <li><a href="#banner">Inicio</a></li>
     <li><a href="#services">Servicios</a></li>
     <li><a href="#socials">Redes</a></li>
     <li><a href="#location">Ubicación</a></li>
+    <li><a href="#payment">Datos para Pago</a></li>
   </ul>
 </nav>
+
+
 
   <!-- Banner -->
   <header class="banner" id="banner">
@@ -36,6 +46,14 @@
     </div>
   </header>
 
+
+    <!-- Sección Logo -->
+  <section class="logo-section">
+    <img src="assets/img/logouomo1.jpeg" alt="Uomo Estética para Hombres" class="logo-local">
+  </section>
+
+
+  
   <!-- Servicios -->
 <section class="services" id="services">
   <h2>Nuestros Servicios</h2>
@@ -56,6 +74,12 @@
       <p><strong>Cantidad de sesiones:</strong> 8 (puede variar según el caso).</p>
       <p><strong>Frecuencia:</strong> 1 vez por mes.</p>
       <p><strong>Mantenimiento:</strong> Según caso particular.</p>
+      <a 
+        href="https://wa.me/543816567215?text=Hola,%20estoy%20interesado%20en%20el%20servicio%20Depilación%20Láser%20Diodo.%20Necesito%20más%20información%20y%20quiero%20solicitar%20un%20turno.%20Mis%20datos:%20Nombre:%20___%20/%20Día:%20___%20/%20Hora:%20___" 
+        target="_blank" 
+        class="whatsapp-btn">
+        Consultar por WhatsApp
+      </a>
     </div>
 
     <!-- Hollywood Peel -->
@@ -76,6 +100,12 @@
       <p><strong>Frecuencia:</strong> 1 vez por mes.</p>
       <p><strong>Duración:</strong> 30 minutos por sesión.</p>
       <p><strong>Época:</strong> Se puede realizar todo el año.</p>
+      <a 
+        href="https://wa.me/543816567215?text=Hola,%20estoy%20interesado%20en%20el%20servicio%20Hollywood%20Peel.%20Necesito%20más%20información%20y%20quiero%20solicitar%20un%20turno.%20Mis%20datos:%20Nombre:%20___%20/%20Día:%20___%20/%20Hora:%20___" 
+        target="_blank" 
+        class="whatsapp-btn">
+        Consultar por WhatsApp
+      </a>
     </div>
 
     <!-- Masajes -->
@@ -87,12 +117,24 @@
         <li><strong>Circulatorio / Drenante:</strong> Mejora la circulación, defensas y oxigena tejidos.</li>
         <li><strong>Descontracturante / Relajante:</strong> Elimina estrés y tensión, mejora el sueño y energía vital.</li>
       </ul>
+      <a 
+        href="https://wa.me/543816567215?text=Hola,%20estoy%20interesado%20en%20el%20servicio%20Masajes.%20Necesito%20más%20información%20y%20quiero%20solicitar%20un%20turno.%20Mis%20datos:%20Nombre:%20___%20/%20Día:%20___%20/%20Hora:%20___" 
+        target="_blank" 
+        class="whatsapp-btn">
+        Consultar por WhatsApp
+      </a>
     </div>
 
     <!-- Scrub Corporal -->
     <div class="card">
       <h3>Scrub Corporal (Exfoliación)</h3>
       <p>Técnica que elimina células muertas, combate efectos del envejecimiento y mejora la textura de la piel.</p>
+      <a 
+        href="https://wa.me/543816567215?text=Hola,%20estoy%20interesado%20en%20el%20servicio%20Scrub%20Corporal.%20Necesito%20más%20información%20y%20quiero%20solicitar%20un%20turno.%20Mis%20datos:%20Nombre:%20___%20/%20Día:%20___%20/%20Hora:%20___" 
+        target="_blank" 
+        class="whatsapp-btn">
+        Consultar por WhatsApp
+      </a>
     </div>
 
     <!-- Mesoterapia Virtual -->
@@ -108,18 +150,35 @@
       </ul>
       <p><strong>Cantidad de sesiones:</strong> 10 (según caso).</p>
       <p><strong>Frecuencia:</strong> 1 a 2 veces por semana.</p>
-    
+      <a 
+        href="https://wa.me/543816567215?text=Hola,%20estoy%20interesado%20en%20el%20servicio%20Mesoterapia%20Virtual.%20Necesito%20más%20información%20y%20quiero%20solicitar%20un%20turno.%20Mis%20datos:%20Nombre:%20___%20/%20Día:%20___%20/%20Hora:%20___" 
+        target="_blank" 
+        class="whatsapp-btn">
+        Consultar por WhatsApp
+      </a>
     </div>
 
   </div>
 </section>
 
-  <!-- Socials -->
+
+
+  <!-- Redes Sociales -->
   <section class="socials" id="socials">
     <h2>Seguinos en nuestras redes</h2>
-    <a href="https://instagram.com/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram fa-2x"></i></a>
-    <a href="https://facebook.com/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook fa-2x"></i></a>
-    <a href="https://wa.me/XXXXXXXXXX" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp fa-2x"></i></a>
+    <a href="https://instagram.com/uomoestetica.tuc" target="_blank" aria-label="Instagram"><i class="fab fa-instagram fa-2x"></i></a>
+    <a href="https://facebook.com/uomoestetica.tuc" target="_blank" aria-label="Facebook"><i class="fab fa-facebook fa-2x"></i></a>
+    <a href="https://wa.me/543816567215?text=Hola,%20quisiera%20más%20información%20sobre%20los%20servicios%20de%20Uomo" 
+   target="_blank" 
+   aria-label="WhatsApp">
+   <i class="fab fa-whatsapp fa-2x"></i>
+</a>  
+  <a href="mailto:uomoestetica.tuc@gmail.com?subject=Consulta%20sobre%20servicios&body=Hola,%20quisiera%20recibir%20más%20información%20sobre%20los%20tratamientos%20y%20turnos%20disponibles.%20Gracias." 
+   target="_blank" 
+   aria-label="Correo">
+   <i class="fa-solid fa-envelope fa-2x"></i>
+</a>
+
   </section>
 
   <!-- Ubicación -->
@@ -133,12 +192,15 @@
     <h2>Datos de Pago</h2>
     <div class="payment-info">
       <div>
-        <p><strong>Alias:</strong> uomo.spa.tucuman</p>
-        <button onclick="copyToClipboard('uomo.spa.tucuman', this)">Copiar Alias</button>
+        <p><strong>Titular:</strong> Jaureguina Victor Alejandro</p>
+        <p><strong>DNI:</strong> 21.702.728</p>
+        <p><strong>Tipo de cuenta:</strong> Cuenta en Pesos 230-026496/5</p>
+        <p><strong>Alias:</strong> uomotuc</p>
+        <button onclick="copyToClipboard('uomotuc', this)">Copiar Alias</button>
       </div>
       <div>
-        <p><strong>CBU:</strong> 0000003100012345678901</p>
-        <button onclick="copyToClipboard('0000003100012345678901', this)">Copiar CBU</button>
+        <p><strong>CBU:</strong> 0720230088000002649654</p>
+        <button onclick="copyToClipboard('0720230088000002649654', this)">Copiar CBU</button>
       </div>
     </div>
   </section>
@@ -150,13 +212,13 @@
 
   <!-- Scripts -->
   <script>
-    // Toggle menú y animación hamburguesa
+    // Toggle menú
     document.getElementById('hamburger').addEventListener('click', () => {
       document.getElementById('navLinks').classList.toggle('active');
       document.getElementById('hamburger').classList.toggle('open');
     });
 
-    // Cerrar menú al hacer clic en un enlace
+    // Cerrar menú al hacer clic
     document.querySelectorAll('.nav-links a').forEach(link => {
       link.addEventListener('click', () => {
         document.getElementById('navLinks').classList.remove('active');
@@ -164,7 +226,7 @@
       });
     });
 
-    // Copiar datos al portapapeles
+    // Copiar al portapapeles
     function copyToClipboard(text, btn) {
       navigator.clipboard.writeText(text).then(() => {
         btn.textContent = '¡Copiado!';
