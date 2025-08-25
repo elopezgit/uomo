@@ -1,445 +1,192 @@
-body {
-  margin: 0;
-  font-family: 'Montserrat', sans-serif;
-  background: #000;
-  color: #fff;
-  line-height: 1.6;
-  scroll-behavior: smooth;
+/* ===== Base ===== */
+body{
+  margin:0;
+  font-family:'Montserrat',sans-serif;
+  background:#000;
+  color:#fff;
+  line-height:1.6;
+  scroll-behavior:smooth;
 }
 
-/* Navbar */
-.navbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background: #111;
-  color: #fff;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 2rem;
-  z-index: 10;
+/* ===== Navbar ===== */
+.navbar{
+  position:fixed;
+  top:0; left:0; width:100%;
+  background:#111; color:#fff;
+  display:flex; align-items:center; justify-content:space-between;
+  padding:1rem 2rem;
+  min-height:64px;
+  z-index:1000;
 }
-
-.navbar .logo {
-  font-size: 1.8rem;
-  font-weight: 800;
-}
-
-/* Hamburguesa */
-.navbar .hamburger {
-  cursor: pointer;
-  display: none;
-  font-size: 1.8rem;
-  z-index: 20;
-  position: relative;
-  transition: transform 0.3s ease;
-}
-
-.navbar .hamburger i {
-  color: #fff;
-  font-size: 1.8rem;
-}
-
-.hamburger.open i::before {
-  content: "\f00d"; /* Ícono de "X" en Font Awesome */
-}
-
-/* LINKS EN ESCRITORIO */
-.navbar .nav-links {
-  list-style: none;
-  display: flex;
-  gap: 2.5rem;
-  padding-right: 2rem;
-}
-
-.navbar .nav-links li a {
-  color: #fff;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 1rem;
-  white-space: nowrap;
-}
-
-.navbar .nav-links li a:hover {
-  color: #1e3a8a;
-}
-
-/* Ajuste para tablets */
-@media (max-width: 1024px) {
-  .navbar .nav-links {
-    gap: 1.2rem;
-  }
-  .navbar .nav-links li a {
-    font-size: 0.95rem;
-  }
-}
-
-/* Responsive para móviles */
-@media (max-width: 768px) {
-  .navbar .hamburger {
-    display: block;
-  }
-  .navbar .nav-links {
-    position: absolute;
-    top: 70px;
-    right: 0;
-    background: #111;
-    flex-direction: column;
-    width: 220px;
-    display: none;
-    padding: 1rem;
-  }
-  .navbar .nav-links.active {
-    display: flex;
-    animation: slideIn .3s ease forwards;
-  }
-  .navbar .nav-links li a {
-    font-size: 1rem;
-    padding: 0.5rem 0;
-  }
-}
-
-@keyframes slideIn {
-  from {opacity: 0; transform: translateX(100%);}
-  to {opacity: 1; transform: translateX(0);}
-}
-
-/* Banner */
-.banner {
-  position: relative;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-.banner-video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: .4;
-  filter: grayscale(100%);
-}
-.banner-content {
-  position: relative;
-  z-index: 1;
-  padding: 0 1rem;
-}
-.banner-content h1 {
-  font-size: 4rem;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-}
-.banner-content p {
-  font-size: 1.3rem;
-  margin: 1rem 0;
-  font-weight: 400;
-}
-.cta-button {
-  background: #1e3a8a;
-  padding: 1rem 2rem;
-  border-radius: 50px;
-  color: #fff;
-  text-decoration: none;
-  font-size: 1.2rem;
-  transition: background .3s ease;
-}
-.cta-button:hover {
-  background: #10225b;
-}
-
-/* Banner en móviles */
-@media (max-width: 768px) {
-  .banner-content h1 {
-    font-size: 2.2rem;
-    line-height: 1.2;
-  }
-  .banner-content p {
-    font-size: 1rem;
-  }
-  .cta-button {
-    font-size: 1rem;
-    padding: 0.8rem 1.5rem;
-  }
-}
-
-/* Servicios */
-.services {
-  padding: 4rem 2rem;
-  background: #111;
-}
-.services h2 {
-  text-align: center;
-  font-size: 2.8rem;
-  margin-bottom: 2rem;
-  font-weight: 600;
-}
-.cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1.5rem;
-}
-
-/* Card con flex para empujar el botón abajo */
-.card {
-  background: #222;
-  padding: 2rem;
-  border-radius: 20px;
-  transition: transform .3s ease;
-  display: flex;               /* << clave */
-  flex-direction: column;      /* << clave */
-  min-height: 100%;            /* ayuda en alturas variables */
-}
-.card:hover {
-  transform: scale(1.05);
-}
-.card h3 {
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
-  font-weight: 600;
-}
-
-/* Botón WhatsApp alineado al pie de cada card */
-.whatsapp-btn {
-  margin-top: auto;            /* << empuja al fondo */
-  align-self: center;          /* centrado horizontal */
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 10px 15px;
-  background-color: #25d366;
-  color: #fff;
-  text-decoration: none;
-  border-radius: 5px;
-  font-weight: bold;
-  transition: background 0.3s;
-  text-align: center;
-  width: 100%; 
-
-}
-.whatsapp-btn:hover {
-  background-color: #1ebd5a;
-}
-
-/* Redes */
-.socials {
-  text-align: center;
-  padding: 2rem;
-  background: #111;
-}
-.socials a i {
-  transition: transform .3s, color .3s;
-  color: #fff;
-}
-.socials a:hover i {
-  transform: scale(1.2);
-}
-.socials a[aria-label="Instagram"] i:hover {color: #E1306C;}
-.socials a[aria-label="Facebook"] i:hover {color: #1877F2;}
-.socials a[aria-label="WhatsApp"] i:hover {color: #25D366;}
-
-/* Ubicación */
-.location {
-  padding: 4rem 2rem;
-  background: #111;
-  text-align: center;
-}
-.location iframe {
-  width: 100%;
-  height: 400px;
-  border: none;
-  border-radius: 10px;
-}
-
-/* Datos de Pago */
-.payment {
-  padding: 4rem 2rem;
-  background: #111;
-  text-align: center;
-}
-.payment h2 {
-  font-size: 2.5rem;
-  margin-bottom: 2rem;
-  font-weight: 600;
-}
-.payment-info {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-  align-items: center;
-}
-.payment-info div {
-  background: #222;
-  padding: 1.5rem;
-  border-radius: 10px;
-  width: 100%;
-  max-width: 500px;
-  text-align: center;
-}
-.payment-info p {
-  font-size: 1.2rem;
-  margin-bottom: 0.5rem;
-}
-.payment-info button {
-  background: #1e3a8a;
-  color: #fff;
-  border: none;
-  padding: 0.7rem 1.5rem;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 1rem;
-  transition: background 0.3s ease;
-}
-.payment-info button:hover {
-  background: #10225b;
-}
-
-/* Sección Solo Logo */
-.logo-section {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;   /* ocupa toda la pantalla */
-  background: #000; /* fondo elegante */
-}
-.logo-local {
-  max-width: 600px;
-  width: 80%;
-  height: auto;
-}
-.logo-img {
-  height: 50px;
-  width: auto;
-}
-
-/* Footer */
-footer {
-  text-align: center;
-  padding: 1rem;
-  background: #111;
-  color: #777;
-}
-
-/* (duplicado de hamburguesa incluido arriba; conservamos esta versión compacta para móviles) */
-.navbar .hamburger {
-  cursor: pointer;
-  display: none;
-  font-size: 2rem;
-  z-index: 20;
-  position: relative;
-}
-.navbar .hamburger i {
-  color: #fff;
-  font-size: 2rem;
-}
-@media (max-width: 768px) {
-  .navbar .hamburger {
-    display: block;
-  }
-}
-
 
 /* Logo */
-.logo-img { height: 42px; width: auto; display:block; }
+.logo-img{ height:42px; width:auto; display:block; }
 
-/* Botón hamburguesa */
-.navbar .hamburger{
-  background: transparent;
-  border: 0;
-  color:#fff;
-  cursor:pointer;
-  display:none;          /* se muestra en mobile */
-  font-size: 1.9rem;
-  z-index: 100;          /* por encima del menú */
-  line-height: 1;
+/* Links escritorio */
+.navbar .nav-links{
+  list-style:none; display:flex; gap:2.5rem; padding-right:2rem;
 }
-
-/* Menú mobile en overlay */
-@media (max-width: 768px){
-  .navbar .hamburger{ display:block; }
-
-  .navbar .nav-links{
-    position: fixed;     /* overlay */
-    top: 64px;           /* altura aprox. de la navbar */
-    right: 0;
-    background:#111;
-    flex-direction: column;
-    width: 80vw;
-    max-width: 320px;
-    height: calc(100vh - 64px);
-    display:none;
-    padding: 1rem;
-    gap: 1rem;
-    z-index: 90;         /* por debajo del botón */
-    box-shadow: -8px 0 24px rgba(0,0,0,.4);
-  }
-  .navbar .nav-links.active{ display:flex; animation: slideIn .3s ease forwards; }
+.navbar .nav-links li a{
+  color:#fff; text-decoration:none; font-weight:600; font-size:1rem; white-space:nowrap;
 }
+.navbar .nav-links li a:hover{ color:#1e3a8a; }
 
-/* (opcional) cambiar ícono a “X” al abrir */
+/* ===== Botón Hamburguesa ===== */
+.hamburger{
+  background:transparent; border:0; color:#fff; cursor:pointer;
+  width:56px; height:56px; border-radius:10px;
+  display:none; align-items:center; justify-content:center;
+  z-index:1100; line-height:1;
+}
+.hamburger i{ font-size:28px; line-height:1; pointer-events:none; }
 .hamburger.open i::before{ content:"\f00d"; }
 
+/* ===== Menú Mobile (overlay) ===== */
+@media (max-width:768px){
+  .hamburger{ display:inline-flex; margin-left:auto; }
 
-/* Aumentar altura de la navbar y asegurar que quede por encima */
-.navbar{
-  min-height: 64px;
-  z-index: 1000; /* más alto que el menú y el video */
-}
-
-/* Botón hamburguesa: área tocable grande (48–56px) */
-.navbar .hamburger{
-  background: transparent;
-  border: 0;
-  color: #fff;
-  cursor: pointer;
-  display: none;          /* se muestra en mobile más abajo */
-  width: 56px;            /* área de toque */
-  height: 56px;           /* área de toque */
-  border-radius: 10px;
-  align-items: center;
-  justify-content: center;
-  display: none;
-  z-index: 1100;          /* por encima del panel */
-  padding: 0;             /* el ancho/alto ya definen el área */
-}
-
-.navbar .hamburger i{
-  font-size: 28px;        /* icono más grande */
-  line-height: 1;
-  pointer-events: none;   /* asegura que el click llegue al botón */
-}
-
-/* Mostrar en móvil y colocarlo bien a la derecha */
-@media (max-width: 768px){
-  .navbar .hamburger{
-    display: inline-flex;
-    margin-left: auto;
-  }
-
-  /* Panel lateral */
   .navbar .nav-links{
-    position: fixed;
-    top: 64px;
-    right: 0;
+    position:fixed; top:64px; right:0;
     background:#111;
-    flex-direction: column;
-    width: 80vw;
-    max-width: 320px;
-    height: calc(100vh - 64px);
-    display:none;
-    padding: 1rem;
-    gap: 1rem;
-    z-index: 1005;
-    box-shadow: -8px 0 24px rgba(0,0,0,.4);
+    flex-direction:column;
+    width:80vw; max-width:320px;
+    height:calc(100vh - 64px);
+    display:none; padding:1rem; gap:1rem;
+    z-index:1005;
+    box-shadow:-8px 0 24px rgba(0,0,0,.4);
   }
-  .navbar .nav-links.active{ display:flex; }
+  .navbar .nav-links.active{ display:flex; animation:slideIn .3s ease forwards; }
+}
+@keyframes slideIn{ from{opacity:0; transform:translateX(100%);} to{opacity:1; transform:translateX(0);} }
+
+/* ===== Banner ===== */
+.banner{
+  position:relative; height:100vh;
+  display:flex; justify-content:center; align-items:center; text-align:center;
+}
+.banner-video{
+  position:absolute; inset:0; width:100%; height:100%;
+  object-fit:cover; opacity:.4; filter:grayscale(100%);
+}
+.banner-content{ position:relative; z-index:1; padding:0 1rem; }
+.banner-content h1{
+  font-size:4rem; font-weight:800; text-transform:uppercase; letter-spacing:2px;
+}
+.banner-content p{ font-size:1.3rem; margin:1rem 0; font-weight:400; }
+.cta-button{
+  background:#1e3a8a; padding:1rem 2rem; border-radius:50px; color:#fff;
+  text-decoration:none; font-size:1.2rem; transition:background .3s ease;
+}
+.cta-button:hover{ background:#10225b; }
+
+@media (max-width:768px){
+  .banner-content h1{ font-size:2.2rem; line-height:1.2; }
+  .banner-content p{ font-size:1rem; }
+  .cta-button{ font-size:1rem; padding:.8rem 1.5rem; }
 }
 
-/* Cambiar a X cuando está abierto (Font Awesome) */
-.hamburger.open i::before{ content:"\f00d"; }
+/* ===== Sección Solo Logo ===== */
+.logo-section{
+  display:flex; justify-content:center; align-items:center;
+  height:100vh; background:#000;
+}
+.logo-local{ max-width:600px; width:80%; height:auto; }
+
+/* ===== Servicios ===== */
+.services{ padding:4rem 2rem; background:#111; }
+.services h2{ text-align:center; font-size:2.8rem; margin-bottom:2rem; font-weight:600; }
+
+.cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));
+  gap:32px;
+}
+
+.card{
+  background:#222; color:#fff;
+  padding:2rem; border-radius:20px;
+  display:flex; flex-direction:column;
+  box-shadow:0 6px 16px rgba(0,0,0,.25);
+  overflow:hidden;
+  transition:box-shadow .25s ease, transform .25s ease;
+}
+.card h3{ font-size:1.5rem; margin-bottom:1rem; font-weight:600; }
+
+/* Hover elegante SOLO en desktop */
+@media (hover:hover) and (pointer:fine){
+  .card:hover{ transform:translateY(-4px); box-shadow:0 12px 28px rgba(0,0,0,.35); }
+}
+
+/* En mobile, sin transform para evitar solapes */
+@media (max-width:768px){
+  .card:hover{ transform:none; box-shadow:0 6px 16px rgba(0,0,0,.25); }
+}
+
+/* Botón WhatsApp centrado */
+.whatsapp-btn{
+  margin-top:auto;
+  margin:20px auto 0 auto;
+  display:inline-flex; align-items:center; justify-content:center; gap:8px;
+  padding:12px 20px;
+  background:#25d366; color:#fff; text-decoration:none;
+  border-radius:8px; font-weight:700; text-align:center;
+  transition:background .3s ease;
+  width:auto; min-width:200px; max-width:90%;
+}
+.whatsapp-btn:hover{ background:#1ebd5a; }
+
+/* ===== Redes ===== */
+.socials{ text-align:center; padding:2rem; background:#111; }
+.socials a i{ color:#fff; transition:transform .3s, color .3s; }
+.socials a:hover i{ transform:scale(1.2); }
+.socials a[aria-label="Instagram"] i:hover{ color:#E1306C; }
+.socials a[aria-label="Facebook"]  i:hover{ color:#1877F2; }
+.socials a[aria-label="WhatsApp"]  i:hover{ color:#25D366; }
+
+/* ===== Ubicación ===== */
+.location{ padding:4rem 2rem; background:#111; text-align:center; }
+.location iframe{ width:100%; height:400px; border:none; border-radius:10px; }
+
+/* ===== Datos de Pago ===== */
+.payment{ padding:4rem 2rem; background:#111; text-align:center; }
+.payment h2{ font-size:2.5rem; margin-bottom:2rem; font-weight:600; }
+.payment-info{
+  display:flex; flex-direction:column; gap:1.5rem; align-items:center;
+}
+.payment-info div{
+  background:#222; padding:1.5rem; border-radius:10px;
+  width:100%; max-width:500px; text-align:center;
+}
+.payment-info p{ font-size:1.2rem; margin-bottom:.5rem; }
+.payment-info button{
+  background:#1e3a8a; color:#fff; border:0;
+  padding:.7rem 1.5rem; border-radius:5px; cursor:pointer; font-size:1rem;
+  transition:background .3s ease;
+}
+.payment-info button:hover{ background:#10225b; }
+
+/* ===== Footer ===== */
+footer{ text-align:center; padding:1rem; background:#111; color:#777; }
+
+
+
+
+/* Logo en el banner */
+.banner-logo {
+  position: absolute;
+  top: 15%;               /* posición vertical aprox */
+  left: 50%;              /* centrado horizontal */
+  transform: translateX(-50%);
+  width: 180px;           /* ajustá el tamaño */
+  opacity: 0.25;          /* transparencia */
+  z-index: 2;             /* sobre el overlay, debajo del texto */
+  pointer-events: none;   /* no interfiere con clics */
+}
+
+/* Responsive: logo más chico en mobile */
+@media (max-width: 768px){
+  .banner-logo {
+    width: 120px;
+    top: 18%;
+  }
+}

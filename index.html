@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
-  
+
   <nav class="navbar">
   <div class="logo">
     <a href="#banner" class="logo-link" aria-label="Ir al inicio">
@@ -33,25 +33,27 @@
 </nav>
 
 
+<!-- Banner -->
+<header class="banner" id="banner">
+  <video autoplay loop muted playsinline class="banner-video" poster="assets/video/banner-poster.jpg">
+    <source src="assets/video/banner.mp4" type="video/mp4">
+  </video>
 
-  <!-- Banner -->
-  <header class="banner" id="banner">
-    <video autoplay loop muted class="banner-video">
-      <source src="assets/video/banner.mp4" type="video/mp4">
-    </video>
-    <div class="banner-content">
-      <h1>EXPERIENCIA UOMO EXCLUSIVA</h1>
-      <p>Estética y bienestar diseñados para vos.</p>
-      <a href="#services" class="cta-button">RESERVAR AHORA</a>
-    </div>
-  </header>
+  <!-- Overlay oscuro -->
+  <div class="banner-overlay"></div>
 
+  <!-- Logo transparente arriba -->
+  <img src="assets/img/logouomo1.jpeg" alt="Logo Uomo" class="banner-logo">
 
-    <!-- Sección Logo -->
-  <section class="logo-section">
-    <img src="assets/img/logouomo1.jpeg" alt="Uomo Estética para Hombres" class="logo-local">
-  </section>
-
+  <!-- Contenido del banner -->
+  <div class="banner-content">
+    <h1 class="banner-title">
+      EXPERIENCIA UOMO EXCLUSIVA
+    </h1>
+    <p class="banner-subtitle">Estética para hombres</p>
+    <a href="#services" class="cta-button">RESERVAR AHORA</a>
+  </div>
+</header>
 
   
   <!-- Servicios -->
