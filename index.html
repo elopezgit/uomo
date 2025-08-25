@@ -212,22 +212,34 @@
 
 
   <!-- Datos de Pago -->
-  <section class="payment" id="payment">
-    <h2>Datos de Pago</h2>
-    <div class="payment-info">
-      <div>
-        <p><strong>Titular:</strong> Jaureguina Victor Alejandro</p>
-        <p><strong>Tipo de cuenta:</strong> Cuenta en Pesos 230-026496/5</p>
-        <p><strong>Banco:</strong> Santander Rio</p>
-        <p><strong>Alias:</strong> uomotuc</p>
-        <button onclick="copyToClipboard('uomotuc', this)">Copiar Alias</button>
-      </div>
-      <div>
-        <p><strong>CBU:</strong> 0720230088000002649654</p>
-        <button onclick="copyToClipboard('0720230088000002649654', this)">Copiar CBU</button>
-      </div>
+<section class="payment" id="payment">
+  <h2>Datos de Pago</h2>
+  <div class="payment-info">
+    <div>
+      <p><strong>Titular:</strong> Jaureguina Victor Alejandro</p>
+      <p><strong>Tipo de cuenta:</strong> Cuenta en Pesos 230-026496/5</p>
+      <p><strong>Banco:</strong> Santander Río</p>
+      <p><strong>Alias:</strong> uomotuc</p>
+      <button onclick="copyToClipboard('uomotuc', this)">Copiar Alias</button>
     </div>
-  </section>
+    <div>
+      <p><strong>CBU:</strong> 0720230088000002649654</p>
+      <button onclick="copyToClipboard('0720230088000002649654', this)">Copiar CBU</button>
+    </div>
+  </div>
+
+  <!-- Medios de Pago -->
+  <div class="payment-methods" style="margin-top: 2rem; text-align: left; max-width: 500px; margin-left: auto; margin-right: auto;">
+    <h3 style="margin-bottom: 1rem; text-align:center;">Medios de Pago Aceptados</h3>
+    <ul style="list-style: none; padding: 0; font-size: 1.1rem; line-height: 1.8;">
+      <li>✔ QR</li>
+      <li>✔ Transferencias</li>
+      <li>✔ Tarjeta de Débito</li>
+      <li>✔ Tarjeta de Crédito <span style="color:#f87171;">(15% de recargo)</span></li>
+    </ul>
+  </div>
+</section>
+
 
   <!-- Footer -->
   <footer>
